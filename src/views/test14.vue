@@ -12,10 +12,20 @@
 </template>
 
 <script>
-import comson from './test/ceshi4.vue'
+import comson from './test/ceshi4.vue';
+var clc = require("cli-color");
 export default {
     components:{
         comson
+    },
+    mounted(){
+        // console.log(clc.red("Text in red"));
+        // console.log(clc.red.bgGreen.underline("Underlined red text on white background."));
+        // console.log(clc.red("red " + clc.blue("blue") + " red"));
+        // console.log(clc.red("red") + " plain " + clc.blue("blue"));
+        var msg = clc.xterm(7).bgXterm(78);
+        console.log(msg("Orange text on dark gray background"));
+        // process.stdout.write(clc.reset);
     },
     data(){
         return {
