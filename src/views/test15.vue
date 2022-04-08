@@ -1,6 +1,6 @@
 <template>
   <div>
-      测试
+      欢迎回来！！！
       <br>
       {{msg}}
   </div>
