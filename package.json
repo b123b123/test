@@ -9,6 +9,7 @@
   "dependencies": {
     "axios": "^0.24.0",
     "core-js": "^3.6.5",
+    "el-tree-transfer": "^2.4.7",
     "element-ui": "^2.15.6",
     "file-saver": "^2.0.5",
     "mockjs": "^1.1.0",
@@ -26,6 +27,7 @@
     "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "cli-color": "^2.0.2",
+    "less-loader": "^11.0.0",
     "mockjs": "^1.1.0",
     "sass-loader": "^12.4.0",
     "vue-template-compiler": "^2.6.11"
