@@ -1,4 +1,12 @@
- <template>
+<!--
+ * @Description: 
+ * @Version: 2.0
+ * @Author: wuyue.nan
+ * @Date: 2022-06-17 13:17:51
+ * @LastEditors: wuyue.nan
+ * @LastEditTime: 2022-06-24 14:48:11
+-->
+<template>
   <div>
     <tree-transfer
       :title="title"
@@ -30,6 +38,7 @@ export default {
     // console.log("this2 ==> ", this.hello);
     // this.hello = "666";
     // console.log("this3 ==> ", this.hello);
+    this.ceshi();
   },
   data() {
     return {
@@ -84,11 +93,30 @@ export default {
       console.log("fromData:", fromData);
       console.log("toData:", toData);
       console.log("obj:", obj);
+      this.ceshi();
+      this.nihao();
+    },
+    /**
+     * @description:
+     * @param {*} a
+     * @param {*} b
+     * @param {*} c
+     * @return {*}
+     * @author: WangBo
+     */
+    ceshi(a, b, c) {
+      return "";
+    },
+    nihao(q, w, e) {
+      "s";
     },
   },
   components: { treeTransfer }, // 注册
 };
 </script>
 
-    <style>
+<style scoped>
+div {
+  color: red;
+}
 </style>
