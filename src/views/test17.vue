@@ -4,7 +4,7 @@
  * @Author: wuyue.nan
  * @Date: 2022-06-17 13:17:51
  * @LastEditors: wuyue.nan
- * @LastEditTime: 2022-06-24 14:48:11
+ * @LastEditTime: 2022-06-24 15:40:18
 -->
 <template>
   <div>
@@ -118,5 +118,7 @@ export default {
 <style scoped>
 div {
   color: red;
+  width: 100px;
+  height: 12.5rem;
 }
 </style>
