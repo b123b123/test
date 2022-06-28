@@ -9,9 +9,11 @@
   "dependencies": {
     "axios": "^0.24.0",
     "core-js": "^3.6.5",
+    "echarts": "^5.3.3",
     "el-tree-transfer": "^2.4.7",
     "element-ui": "^2.15.6",
     "file-saver": "^2.0.5",
+    "jquery": "^3.6.0",
     "mockjs": "^1.1.0",
     "print-js": "^1.6.0",
     "vant": "^3.4.7",
