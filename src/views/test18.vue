@@ -29,7 +29,7 @@ export default {
       // 基于准备好的dom，初始化echarts实例
       let myChart = echarts.init(document.getElementById("myChart"));
       let Option;
-      var jiangxi = "/asset/get/s/data-1518338017111-rJK1gtpUM.json";
+      var jiangxi = "/areas_v3/bound/330700_full.json";
       var yingtan = "/asset/get/s/data-1518338860057-By447tpLf.json";
       var yichun = "/asset/get/s/data-1518338852969-Hy677KTIf.json";
       var xinyu = "/asset/get/s/data-1518338838010-SyAzQYTIf.json";
@@ -513,7 +513,7 @@ export default {
 
       $.getJSON(jiangxi, function (geoJson) {
         echarts.registerMap("江西", geoJson);
-        var myChart = echarts.extendsMap("chart-panel", {
+        var myChart = echarts.extendsMap("myChart", {
           bgColor: "#154e90", // 画布背景色
           mapName: "江西", // 地图名
           goDown: true, // 是否下钻
