@@ -4,10 +4,10 @@
  * @Author: wuyue.nan
  * @Date: 2022-06-28 17:15:04
  * @LastEditors: wuyue.nan
- * @LastEditTime: 2022-06-28 17:26:56
+ * @LastEditTime: 2022-07-12 16:10:37
 -->
 <template>
-  <div id="myChart" :style="{ width: '100%', height: '100vh' }"></div>
+  <div id="myChart" style="width: 100%; height: 100vh"></div>
 </template>
 
 <script>
