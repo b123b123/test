@@ -4,7 +4,7 @@
  * @Author: wuyue.nan
  * @Date: 2022-06-28 17:15:04
  * @LastEditors: wuyue.nan
- * @LastEditTime: 2022-07-12 16:19:34
+ * @LastEditTime: 2022-07-12 17:24:43
 -->
 <template>
   <div id="myChart" style="width: 100%; height: 100vh"></div>
@@ -48,7 +48,7 @@ export default {
 
         var curGeoJson = {};
         var cityMap = {
-          南昌市: nanchang,
+          金东区: nanchang,
           景德镇市: jingdezhen,
           萍乡市: pingxiang,
           九江市: jiujiang,
@@ -164,7 +164,7 @@ export default {
            **/
           createBreadcrumb: function (name) {
             var cityToPinyin = {
-              南昌市: "nanchang",
+              金东区: "nanchang",
               景德镇市: "jingdezhen",
               萍乡市: "pingxiang",
               九江市: "jiujiang",
@@ -280,6 +280,7 @@ export default {
 
         var option = {
           backgroundColor: opt.bgColor,
+          // tooltip: { show: true },
           graphic: [
             {
               type: "group",
@@ -455,6 +456,7 @@ export default {
               coordinateSystem: "geo",
               // symbol: 'diamond',
               showEffectOn: "render",
+              tooltip: {},
               rippleEffect: {
                 period: 15,
                 scale: 6,
@@ -510,7 +512,37 @@ export default {
 
         return chart;
       };
-
+      var levelColorMap = {
+        1: "rgba(241, 109, 115, .8)",
+        2: "rgba(255, 235, 59, .7)",
+        3: "rgba(147, 235, 248, 1)",
+      };
+      var geoCoordMap = {
+        南昌: [115.89, 28.48],
+        景德镇: [117.28, 29.09],
+        萍乡: [113.93, 27.41],
+        九江: [115.97, 29.51],
+        新余: [114.81, 27.72],
+        金东区下钻: [119.68, 29.2],
+        赣州: [115.04, 25.67],
+        吉安: [115.05, 26.88],
+        宜春: [114.41, 28.03],
+        抚州: [116.45, 27.79],
+        上饶: [117.92, 28.22],
+      };
+      var initSeriesData = function (data) {
+        var temp = [];
+        for (var i = 0; i < data.length; i++) {
+          var geoCoord = geoCoordMap[data[i].name];
+          if (geoCoord) {
+            temp.push({
+              name: data[i].name,
+              value: geoCoord.concat(data[i].value, data[i].level),
+            });
+          }
+        }
+        return temp;
+      };
       $.getJSON(jiangxi, function (geoJson) {
         echarts.registerMap("江西", geoJson);
         var myChart = echarts.extendsMap("myChart", {
@@ -520,32 +552,55 @@ export default {
           // 下钻回调
           callback: function (name, option, instance) {
             console.log(name, option, instance);
+            if (name == "江西") {
+              option = {
+                bgColor: "#154e90", // 画布背景色
+                mapName: "江西", // 地图名
+                goDown: true, // 是否下钻
+              };
+              option.tooltip = { show: false };
+            } else {
+              option.tooltip = { show: true };
+              option.series[0] = {
+                type: "effectScatter",
+                coordinateSystem: "geo",
+                // symbol: 'diamond',
+                showEffectOn: "render",
+                rippleEffect: {
+                  period: 15,
+                  scale: 6,
+                  brushType: "fill",
+                },
+                hoverAnimation: true,
+                itemStyle: {
+                  normal: {
+                    color: function (params) {
+                      return levelColorMap[params.value[3]];
+                    },
+                    shadowBlur: 10,
+                    shadowColor: "#333",
+                  },
+                },
+                tooltip: {
+                  show: true,
+                },
+                data: initSeriesData([
+                  {
+                    name: "金东区下钻",
+                    value: 10,
+                    level: 1,
+                  },
+                ]),
+              };
+            }
+            // option.backgroundColor = "red";
+            instance.setOption(option);
           },
           // 数据展示
           data: [
             {
-              name: "南昌",
+              name: "金东区",
               value: 10,
-              level: 1,
-            },
-            {
-              name: "景德镇",
-              value: 12,
-              level: 2,
-            },
-            {
-              name: "萍乡",
-              value: 11,
-              level: 3,
-            },
-            {
-              name: "赣州",
-              value: 16,
-              level: 2,
-            },
-            {
-              name: "吉安",
-              value: 12,
               level: 1,
             },
           ],
