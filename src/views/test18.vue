@@ -4,7 +4,7 @@
  * @Author: wuyue.nan
  * @Date: 2022-06-28 17:15:04
  * @LastEditors: wuyue.nan
- * @LastEditTime: 2022-07-12 17:24:43
+ * @LastEditTime: 2022-07-12 17:31:27
 -->
 <template>
   <div id="myChart" style="width: 100%; height: 100vh"></div>
@@ -85,6 +85,7 @@ export default {
           bgColor: "#404a59", // 画布背景色
           activeArea: [], // 区域高亮,同echarts配置项
           data: [],
+          tooltip: { show: false },
           // 下钻回调(点击的地图名、实例对象option、实例对象)
           callback: function (name, option, instance) {},
         };
@@ -552,17 +553,13 @@ export default {
           // 下钻回调
           callback: function (name, option, instance) {
             console.log(name, option, instance);
-            if (name == "江西") {
-              option = {
-                bgColor: "#154e90", // 画布背景色
-                mapName: "江西", // 地图名
-                goDown: true, // 是否下钻
-              };
+            option.tooltip = { show: false };
+            option.series[0].tooltip = { show: false };
+            if (name != "江西") {
               option.tooltip = { show: false };
-            } else {
-              option.tooltip = { show: true };
               option.series[0] = {
                 type: "effectScatter",
+                tooltip: { show: false },
                 coordinateSystem: "geo",
                 // symbol: 'diamond',
                 showEffectOn: "render",
