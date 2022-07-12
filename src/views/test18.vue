@@ -4,7 +4,7 @@
  * @Author: wuyue.nan
  * @Date: 2022-06-28 17:15:04
  * @LastEditors: wuyue.nan
- * @LastEditTime: 2022-07-12 16:10:37
+ * @LastEditTime: 2022-07-12 16:19:34
 -->
 <template>
   <div id="myChart" style="width: 100%; height: 100vh"></div>
@@ -30,7 +30,7 @@ export default {
       let myChart = echarts.init(document.getElementById("myChart"));
       let Option;
       var jiangxi = "/areas_v3/bound/330700_full.json";
-      var yingtan = "/asset/get/s/data-1518338860057-By447tpLf.json";
+      var jindong = "/areas_v3/bound/330703.json";
       var yichun = "/asset/get/s/data-1518338852969-Hy677KTIf.json";
       var xinyu = "/asset/get/s/data-1518338838010-SyAzQYTIf.json";
       var shangrao = "/asset/get/s/data-1518338829670-H1UfQYa8G.json";
@@ -53,7 +53,7 @@ export default {
           萍乡市: pingxiang,
           九江市: jiujiang,
           新余市: xinyu,
-          鹰潭市: yingtan,
+          金东区: jindong,
           赣州市: ganzhou,
           吉安市: jian,
           宜春市: yichun,
@@ -66,7 +66,7 @@ export default {
           萍乡: [113.93, 27.41],
           九江: [115.97, 29.51],
           新余: [114.81, 27.72],
-          鹰潭: [117.12, 28.1],
+          金东区: [119.68, 29.1],
           赣州: [115.04, 25.67],
           吉安: [115.05, 26.88],
           宜春: [114.41, 28.03],
@@ -169,7 +169,7 @@ export default {
               萍乡市: "pingxiang",
               九江市: "jiujiang",
               新余市: "xinyu",
-              鹰潭市: "yingtan",
+              金东区: "jindong",
               赣州市: "ganzhou",
               吉安市: "jian",
               宜春市: "yichun",
