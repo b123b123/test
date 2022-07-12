@@ -4,7 +4,7 @@
  * @Author: wuyue.nan
  * @Date: 2022-06-28 17:15:04
  * @LastEditors: wuyue.nan
- * @LastEditTime: 2022-07-12 17:31:27
+ * @LastEditTime: 2022-07-12 17:46:24
 -->
 <template>
   <div id="myChart" style="width: 100%; height: 100vh"></div>
@@ -555,17 +555,23 @@ export default {
             console.log(name, option, instance);
             option.tooltip = { show: false };
             option.series[0].tooltip = { show: false };
+            option.series[0].symbol = "";
+            option.series[0].rippleEffect = {
+              period: 15,
+              scale: 6,
+              brushType: "fill",
+            };
             if (name != "江西") {
               option.tooltip = { show: false };
               option.series[0] = {
                 type: "effectScatter",
                 tooltip: { show: false },
                 coordinateSystem: "geo",
-                // symbol: 'diamond',
+                symbol: "pin",
                 showEffectOn: "render",
                 rippleEffect: {
-                  period: 15,
-                  scale: 6,
+                  period: 0,
+                  scale: 0,
                   brushType: "fill",
                 },
                 hoverAnimation: true,
