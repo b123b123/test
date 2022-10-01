@@ -4,12 +4,20 @@
  * @Author: WangBo
  * @Date: 2022-10-01 10:50:15
  * @LastEditors: WangBo
- * @LastEditTime: 2022-10-01 10:51:22
+ * @LastEditTime: 2022-10-01 10:52:37
 -->
-<template></template>
+<template>
+  <div>HelloWorld</div>
+</template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      test: 1,
+    };
+  },
+};
 </script>
 
 <style></style>
