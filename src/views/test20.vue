@@ -4,12 +4,14 @@
  * @Author: WangBo
  * @Date: 2022-10-01 10:50:15
  * @LastEditors: WangBo
- * @LastEditTime: 2022-10-01 11:23:38
+ * @LastEditTime: 2022-10-01 11:47:56
 -->
 <template>
   <div>
-    <div class="box" @click="test.ceshi('nihaoasasdas'), add">HelloWorld!</div>
+    <div class="box" @click="nihao.ceshi('nihaoasasdas'), add">HelloWorld!</div>
     <div class="test">{{ test }}</div>
+    <div class="test">{{ attr }}</div>
+    <div class="test">{{ wat() }}</div>
   </div>
 </template>
 
@@ -19,16 +21,20 @@ export default {
     let that = this;
     let test = {
       test: 1,
-      nihao: this.add,
+      nihao: that.add,
       ceshi(a) {
         console.log("this ==> ", this.test);
-        console.log("that ==> ", that);
         console.log("a ==> ", a);
+        this.nihao();
       },
     };
-    test.ceshi("nihao");
     return {
       test,
+      nihao: test,
+      attr: 111,
+      wat() {
+        return this.test.test + 1;
+      },
     };
   },
   methods: {
