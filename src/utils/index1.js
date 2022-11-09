@@ -4,18 +4,20 @@
  * @Author: WangBo
  * @Date: 2022-11-09 10:32:33
  * @LastEditors: WangBo
- * @LastEditTime: 2022-11-09 12:01:05
+ * @LastEditTime: 2022-11-09 13:58:00
  */
 export {nihao};
 var test = 'test';
 var ceshi = 666;
-var nihao = 'niaho';
+let nihao = 'niaho';
 
 // export { test };
 // export { ceshi };
 // export default test;
 // export var nihao = 1
-var obj = {
+export { obj }
+
+let obj = {
     attr:999
 }
 export function fn() { }
@@ -23,7 +25,6 @@ export { fn as hhh }
 export { fn as hhhh }
 // export {nihao}
 export { ceshi }
-export { obj }
 
 // export { add  } from './index2'
 
