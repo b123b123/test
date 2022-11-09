@@ -4,7 +4,7 @@
  * @Author: WangBo
  * @Date: 2022-11-09 10:39:39
  * @LastEditors: WangBo
- * @LastEditTime: 2022-11-09 13:58:50
+ * @LastEditTime: 2022-11-09 14:36:20
 -->
 <template>
   <div>测试</div>
@@ -14,6 +14,9 @@
 // import { test, default as nihao } from "../utils/index1";
 // import { nihao as test } from "../utils/index1";
 import test, { obj, nihao } from "../utils/index1";
+import "../utils/index1";
+import "../utils/index1";
+import "../utils/index1";
 // import * as test from "../utils/index1";
 export default {
   mounted() {
