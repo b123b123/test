@@ -4,7 +4,7 @@
  * @Author: WangBo
  * @Date: 2022-11-09 10:32:33
  * @LastEditors: WangBo
- * @LastEditTime: 2022-11-09 11:24:11
+ * @LastEditTime: 2022-11-09 11:38:11
  */
 export {nihao};
 var test = 'test';
@@ -23,5 +23,14 @@ export { fn as hhh }
 export { fn as hhhh }
 // export {nihao}
 export { ceshi }
-export {obj}
+export { obj }
+
+// export { add  } from './index2'
+
+
+import { add } from './index2'
+
+add(1, 2)
+
+export {add}
 
