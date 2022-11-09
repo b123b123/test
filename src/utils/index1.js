@@ -4,7 +4,7 @@
  * @Author: WangBo
  * @Date: 2022-11-09 10:32:33
  * @LastEditors: WangBo
- * @LastEditTime: 2022-11-09 11:38:11
+ * @LastEditTime: 2022-11-09 12:01:05
  */
 export {nihao};
 var test = 'test';
@@ -33,4 +33,10 @@ import { add } from './index2'
 add(1, 2)
 
 export {add}
+
+const hello = 'hello';
+export { hello }
+export const World = 'world'
+
+export var haha = 'haha'
 
