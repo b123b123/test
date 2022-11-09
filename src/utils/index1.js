@@ -4,16 +4,16 @@
  * @Author: WangBo
  * @Date: 2022-11-09 10:32:33
  * @LastEditors: WangBo
- * @LastEditTime: 2022-11-09 11:04:38
+ * @LastEditTime: 2022-11-09 11:24:11
  */
 export {nihao};
-var test = 1;
+var test = 'test';
 var ceshi = 666;
 var nihao = 'niaho';
 
 // export { test };
 // export { ceshi };
-// export default 1;
+// export default test;
 // export var nihao = 1
 var obj = {
     attr:999
