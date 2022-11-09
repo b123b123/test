@@ -4,7 +4,7 @@
  * @Author: WangBo
  * @Date: 2022-11-09 10:39:39
  * @LastEditors: WangBo
- * @LastEditTime: 2022-11-09 13:49:41
+ * @LastEditTime: 2022-11-09 16:32:56
 -->
 <template>
   <div>测试</div>
@@ -21,14 +21,24 @@ export default {
       console.log(str);
       // import("../utils/index1").then(({ hello: test }) => {
       import(`../${str}`).then(({ hello: test }) => {
-        console.log(test);
         console.log(5);
+        console.log(test);
       });
       // let test = await import("../utils/index1");
       // console.log(test);
-      console.log(3);
+      // console.log(3);
     }
     console.log(4);
+
+    console.log("=============");
+    import(`../utils/index1`).then(({ hello: test }) => {
+      console.log(test);
+      console.log(7);
+    });
+    import(`../utils/index1`).then(({ hello: test }) => {
+      console.log(test);
+      console.log(8);
+    });
   },
 };
 </script>

@@ -4,7 +4,7 @@
  * @Author: WangBo
  * @Date: 2022-11-09 10:32:33
  * @LastEditors: WangBo
- * @LastEditTime: 2022-11-09 13:58:00
+ * @LastEditTime: 2022-11-09 15:56:04
  */
 export {nihao};
 var test = 'test';
@@ -40,4 +40,5 @@ export { hello }
 export const World = 'world'
 
 export var haha = 'haha'
+console.log('nihaoniahoniaho===>');
 
