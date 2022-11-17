@@ -4,7 +4,7 @@
  * @Author: WangBo
  * @Date: 2022-10-01 10:50:15
  * @LastEditors: WangBo
- * @LastEditTime: 2022-10-01 11:47:56
+ * @LastEditTime: 2022-11-16 19:21:03
 -->
 <template>
   <div>
@@ -20,7 +20,7 @@ export default {
   data() {
     let that = this;
     let test = {
-      test: 1,
+      test: 2,
       nihao: that.add,
       ceshi(a) {
         console.log("this ==> ", this.test);
