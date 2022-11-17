@@ -4,7 +4,7 @@
  * @Author: WangBo
  * @Date: 2022-11-09 10:39:39
  * @LastEditors: WangBo
- * @LastEditTime: 2022-11-09 14:36:20
+ * @LastEditTime: 2022-11-17 10:38:14
 -->
 <template>
   <div>测试</div>
@@ -13,7 +13,8 @@
 <script>
 // import { test, default as nihao } from "../utils/index1";
 // import { nihao as test } from "../utils/index1";
-import test, { obj, nihao } from "../utils/index1";
+// import test, { obj, nihao } from "../utils/index1";
+import test, { obj, nihao } from "@/utils/index1";
 import "../utils/index1";
 import "../utils/index1";
 import "../utils/index1";
