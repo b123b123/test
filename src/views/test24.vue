@@ -4,7 +4,7 @@
  * @Author: WangBo
  * @Date: 2022-11-09 10:39:39
  * @LastEditors: WangBo
- * @LastEditTime: 2023-01-20 13:21:07
+ * @LastEditTime: 2023-01-20 13:46:48
 -->
 <template>
   <div>测试</div>
@@ -21,10 +21,10 @@ export default {
     test(13123, 12312, 31231, 23134, 3423);
     test("aaaa13123", 12312, 31231, 23134, 3423, 1231, 123123, 123);
     // test();
-    // let test2 = new ColorConsoleLog({
-    //   styles: { color: "blue" },
-    // });
-    // test2("hello");
+    let test2 = new ColorConsoleLog({
+      styles: { color: "blue" },
+    });
+    test2("hello");
     // test(1212);
   },
 };
