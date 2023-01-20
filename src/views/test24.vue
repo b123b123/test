@@ -4,24 +4,24 @@
  * @Author: WangBo
  * @Date: 2022-11-09 10:39:39
  * @LastEditors: WangBo
- * @LastEditTime: 2023-01-20 12:24:19
+ * @LastEditTime: 2023-01-20 12:59:47
 -->
 <template>
   <div>测试</div>
 </template>
 
 <script>
-import { ColorConsoleLog } from "../utils/colorfulconsole";
+import { ColorConsoleLog, config } from "../utils/colorfulconsole";
 export default {
   mounted() {
-    // let test = new ColorConsoleLog().w;
-
-    // let test = new ColorConsoleLog({
-    //   identify: "32323",
-    //   style: { color: "yellow" },
-    // });
-    let test = new ColorConsoleLog();
-    console.log("test ==> ", test);
+    config.switch = true;
+    let test = new ColorConsoleLog({ switch: true });
+    test(11213);
+    let test2 = new ColorConsoleLog({
+      styles: { color: "blue" },
+    });
+    test2("hello");
+    test(1212);
   },
 };
 </script>
