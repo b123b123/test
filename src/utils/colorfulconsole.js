@@ -24,7 +24,7 @@ export class ColorConsoleLog {
   /**
    * @description: 模块主程序
    */
-  mainFn(value) {
+  mainFn() {
     //合并权限，实例权限高于类权限配置
     config.startNumber = num;
     const tempConfigStyles = Object.assign(
@@ -38,15 +38,22 @@ export class ColorConsoleLog {
       this.consoleConfig,
       tempConfigStyles
     );
-    num++;
-    //输出有样式的log
-    return wbcolor.consoleColor(value, tempConfig);
+    if (tempConfig.clear) {
+      console.clear();
+      tempConfig.clear = false;
+    }
+    Array.from(arguments).forEach((value) => {
+      tempConfig.startNumber = num;
+      num++;
+      //输出有样式的log
+      wbcolor.consoleColor(value, tempConfig);
+    });
   }
 
   /**
    * @description: 运行权限选择程序
    */
-  run(value) {
+  run() {
     // 输出总开关为真的情况下输出
     if (this.power()) {
       //   //判断是不是用户自定义
@@ -55,7 +62,7 @@ export class ColorConsoleLog {
       //     return tempCustomFn;
       //   }
       //模块自有主程序
-      this.mainFn(value);
+      this.mainFn(...arguments);
     }
     return;
   }
