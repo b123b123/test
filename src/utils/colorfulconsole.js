@@ -1,11 +1,12 @@
 import wbcolor from "wb-color";
 let num = 1;
 export const config = {
-  switch: true, //总开关
+  switch: true, //实例控制台是否打印输出，默认true，打印输出到控制台
   //   custom: undefined, //总配置用户自定义
   styles: {
-    color: "red",
-    "font-size": "12px",
+    color: "red", //控制台输出颜色默认为红色
+    "font-size": "12px", //控制台文字大小默认为12px
+    //... 其他自定义样式
   },
   type: true, //选择打印首输出是类型或者是值，默认true,输出是类型
   identify: "---> ", //设置分隔符，默认是'---> '
